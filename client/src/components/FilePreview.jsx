@@ -57,7 +57,7 @@ const FilePreview = ({ file, printSettings, previewSize = 'large' }) => {
       const formData = new FormData();
       formData.append('file', file);
 
-      const response = await axios.post('http://localhost:3001/api/convert-to-pdf', formData, {
+      const response = await axios.post('https://print-5hm2.onrender.com/api/convert-to-pdf', formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
