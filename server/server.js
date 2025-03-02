@@ -7,7 +7,12 @@ const app = express();
 const cors = require('cors');
 const port = 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://print-pi.vercel.app',
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true // Enable credentials (if needed)
+}));
 
 // Configure storage for uploaded files
 const storage = multer.diskStorage({
